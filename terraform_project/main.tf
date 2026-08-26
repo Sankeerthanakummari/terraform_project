@@ -13,10 +13,12 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-830c94e3"
+  ami           = "ami-0468283b4d00417cf"
   instance_type = "t4g.small"
 
   tags = {
     Name = "Terraform_Demo"
   }
 }
+
+
