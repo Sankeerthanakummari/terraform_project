@@ -9,12 +9,12 @@ terraform {
 }
 
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"   # Change region here (e.g., us-east-1, ap-southeast-1)
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0f8ca728008ff5af4"   # Amazon Linux 2 x86_64 AMI for ap-south-1
-  instance_type = "t3.micro"                # Free Tier eligible, x86 bucket (no ARM quota issue)
+  ami           = "ami-0c02fb55956c7d316"   # Amazon Linux 2 x86_64 AMI for us-east-1
+  instance_type = "t3.micro"                # Free Tier eligible, x86 bucket
 
   tags = {
     Name = "Terraform_Demo"
