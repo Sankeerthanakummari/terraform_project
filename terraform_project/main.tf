@@ -13,12 +13,15 @@ provider "aws" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0468283b4d00417cf"
-  instance_type = "t4g.micro"
+  ami           = "ami-0468283b4d00417cf"   # Amazon Linux 2 ARM64 AMI
+  instance_type = "t4g.micro"               # Free Tier eligible, avoids vCPU quota error
 
   tags = {
     Name = "Terraform_Demo"
   }
 }
 
+output "instance_public_ip" {
+  value = aws_instance.app_server.public_ip
+}
 
